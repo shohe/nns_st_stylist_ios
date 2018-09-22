@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StylistProfileWithStarCell" customModule="nns_st" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StylistProfileWithStarCell" rowHeight="235" id="KGk-i7-Jjw" customClass="StylistProfileWithStarCell" customModule="nns_st" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="564" height="235"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="564" height="234.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mvK-un-WnQ">
+                        <rect key="frame" x="224.5" y="24" width="115" height="115"/>
+                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="mvK-un-WnQ" secondAttribute="height" multiplier="1:1" id="acE-Jx-f9a"/>
+                            <constraint firstAttribute="height" constant="115" id="znJ-CK-uN3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="57.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Alx-dx-f7M" userLabel="StarView" customClass="StarView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="249" y="151" width="66" height="12"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Alx-dx-f7M" secondAttribute="height" multiplier="5.5:1" id="BfA-eC-cG6"/>
+                            <constraint firstAttribute="height" constant="12" id="VIB-Wj-8vZ"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="resource" value="star"/>
+                            <userDefinedRuntimeAttribute type="image" keyPath="emptyResouce" value="blankStar"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="スタイリストのステータスコメント" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a42-Kv-cai">
+                        <rect key="frame" x="52" y="175" width="172" height="41"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="a42-Kv-cai" secondAttribute="bottom" constant="24" id="5Uv-0v-8ao"/>
+                    <constraint firstItem="a42-Kv-cai" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="52" id="9eY-uK-YDX"/>
+                    <constraint firstItem="a42-Kv-cai" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="F8u-FP-pUS"/>
+                    <constraint firstItem="Alx-dx-f7M" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gid-jq-wnG"/>
+                    <constraint firstItem="mvK-un-WnQ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="n7E-fG-sif"/>
+                    <constraint firstItem="mvK-un-WnQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="o2C-xy-pej"/>
+                    <constraint firstItem="Alx-dx-f7M" firstAttribute="top" secondItem="mvK-un-WnQ" secondAttribute="bottom" constant="12" id="pD6-3L-a8m"/>
+                    <constraint firstItem="a42-Kv-cai" firstAttribute="top" secondItem="Alx-dx-f7M" secondAttribute="bottom" constant="12" id="pqI-qa-LGg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="starView" destination="Alx-dx-f7M" id="jES-dT-KaI"/>
+                <outlet property="statusComment" destination="a42-Kv-cai" id="gcd-4x-edQ"/>
+                <outlet property="thumbnailView" destination="mvK-un-WnQ" id="eF5-O5-2Yx"/>
+            </connections>
+            <point key="canvasLocation" x="-139" y="76"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="blankStar" width="25" height="25"/>
+        <image name="star" width="25" height="25"/>
+    </resources>
+</document>

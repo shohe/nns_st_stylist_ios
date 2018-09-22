@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewCell" customModule="nns_st" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReviewCell" rowHeight="157" id="KGk-i7-Jjw" customClass="ReviewCell" customModule="nns_st" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="468" height="157"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="468" height="156.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ユーザー名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGp-3j-iXC">
+                        <rect key="frame" x="32" y="35" width="61.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="nOk-gP-xhR"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="レビュー" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wT-eU-w0L">
+                        <rect key="frame" x="24" y="12" width="420" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="SPq-ko-865"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMX-OU-jTo" customClass="StarView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="389" y="37.5" width="55" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="rMX-OU-jTo" secondAttribute="height" multiplier="5.5:1" id="gaH-Pr-pX9"/>
+                            <constraint firstAttribute="height" constant="10" id="hmA-D3-JQL"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="resource" value="star"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="count">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="image" keyPath="emptyResouce" value="blankStar"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スタイリストに対してのレビュー。スタイリストに対してのレビュー。スタイリストに対してのレビュー。スタイリストに対してのレビュー。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2r-Mh-ZEc">
+                        <rect key="frame" x="40" y="58" width="404" height="63.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="306-8V-ocA">
+                        <rect key="frame" x="32" y="58" width="2" height="63.5"/>
+                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="2" id="9tO-RV-Rz9"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2018/00/00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUc-s0-EsQ">
+                        <rect key="frame" x="32" y="129.5" width="412" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="20k-A9-Tdl"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="9wT-eU-w0L" secondAttribute="trailing" constant="24" id="1qk-Tg-6cQ"/>
+                    <constraint firstItem="H2r-Mh-ZEc" firstAttribute="leading" secondItem="306-8V-ocA" secondAttribute="trailing" constant="6" id="A1J-Jf-sms"/>
+                    <constraint firstItem="9wT-eU-w0L" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="Jhz-KT-N67"/>
+                    <constraint firstItem="UUc-s0-EsQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="MCa-aG-iaA"/>
+                    <constraint firstAttribute="bottom" secondItem="UUc-s0-EsQ" secondAttribute="bottom" constant="12" id="UrW-6N-27k"/>
+                    <constraint firstItem="306-8V-ocA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="YZ6-PG-nj7"/>
+                    <constraint firstItem="H2r-Mh-ZEc" firstAttribute="top" secondItem="NGp-3j-iXC" secondAttribute="bottom" constant="8" id="aPh-9i-t7W"/>
+                    <constraint firstItem="9wT-eU-w0L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="b2C-og-sfS"/>
+                    <constraint firstItem="UUc-s0-EsQ" firstAttribute="top" secondItem="H2r-Mh-ZEc" secondAttribute="bottom" constant="8" id="bGA-jP-921"/>
+                    <constraint firstAttribute="trailing" secondItem="rMX-OU-jTo" secondAttribute="trailing" constant="24" id="bHU-iq-LaB"/>
+                    <constraint firstItem="306-8V-ocA" firstAttribute="height" secondItem="H2r-Mh-ZEc" secondAttribute="height" id="dSt-Z3-0TL"/>
+                    <constraint firstItem="306-8V-ocA" firstAttribute="centerY" secondItem="H2r-Mh-ZEc" secondAttribute="centerY" id="gJt-c7-WTV"/>
+                    <constraint firstAttribute="trailing" secondItem="H2r-Mh-ZEc" secondAttribute="trailing" constant="24" id="gkB-uc-dd2"/>
+                    <constraint firstItem="NGp-3j-iXC" firstAttribute="top" secondItem="9wT-eU-w0L" secondAttribute="bottom" constant="8" id="hcw-fy-a0A"/>
+                    <constraint firstAttribute="trailing" secondItem="UUc-s0-EsQ" secondAttribute="trailing" constant="24" id="ieS-jA-7tP"/>
+                    <constraint firstItem="rMX-OU-jTo" firstAttribute="centerY" secondItem="NGp-3j-iXC" secondAttribute="centerY" id="ryM-Rk-lY9"/>
+                    <constraint firstItem="NGp-3j-iXC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="zEf-ba-Qcy"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="comment" destination="H2r-Mh-ZEc" id="TQn-Ng-92M"/>
+                <outlet property="date" destination="UUc-s0-EsQ" id="9KM-oj-iGp"/>
+                <outlet property="headerBottomConst" destination="hcw-fy-a0A" id="pai-qV-SeF"/>
+                <outlet property="headerHeightConst" destination="SPq-ko-865" id="xbf-06-xbN"/>
+                <outlet property="headerTitle" destination="9wT-eU-w0L" id="woc-2E-V8K"/>
+                <outlet property="starView" destination="rMX-OU-jTo" id="Wvy-di-qhz"/>
+                <outlet property="userName" destination="NGp-3j-iXC" id="hO7-wH-CUN"/>
+            </connections>
+            <point key="canvasLocation" x="237" y="56"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="blankStar" width="25" height="25"/>
+        <image name="star" width="25" height="25"/>
+    </resources>
+</document>

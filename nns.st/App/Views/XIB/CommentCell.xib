@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentCell" customModule="nns_st" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="185" id="KGk-i7-Jjw" customClass="CommentCell" customModule="nns_st" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="185"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="184.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkj-0T-fYC">
+                        <rect key="frame" x="20" y="12" width="276" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="YRK-NO-Fbt"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="hdS-qL-kP5">
+                        <rect key="frame" x="32" y="35" width="264" height="125.5"/>
+                        <string key="text">ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。ユーザーのオファーに対してのコメント。</string>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="hdS-qL-kP5" firstAttribute="top" secondItem="zkj-0T-fYC" secondAttribute="bottom" constant="8" id="9Sf-0h-J8W"/>
+                    <constraint firstAttribute="bottom" secondItem="hdS-qL-kP5" secondAttribute="bottom" constant="24" id="C3V-WH-IfD"/>
+                    <constraint firstAttribute="trailing" secondItem="hdS-qL-kP5" secondAttribute="trailing" constant="24" id="QSF-lN-Wv1"/>
+                    <constraint firstItem="hdS-qL-kP5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="ZBs-ML-8H2"/>
+                    <constraint firstAttribute="trailing" secondItem="zkj-0T-fYC" secondAttribute="trailing" constant="24" id="cfF-Za-R0X"/>
+                    <constraint firstItem="zkj-0T-fYC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="uGw-aT-Jy8"/>
+                    <constraint firstItem="zkj-0T-fYC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="v0q-vk-TeF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="comment" destination="hdS-qL-kP5" id="mcu-Ec-Fzb"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="124.5"/>
+        </tableViewCell>
+    </objects>
+</document>

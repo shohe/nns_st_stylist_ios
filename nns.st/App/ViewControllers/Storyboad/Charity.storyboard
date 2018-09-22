@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pLo-Yg-iVO">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ZTl-QF-L3I">
+            <objects>
+                <navigationController storyboardIdentifier="CLNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pLo-Yg-iVO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bvX-xn-6lZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="SoK-h1-qUc" kind="relationship" relationship="rootViewController" id="8W0-tY-2H5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yjz-fy-vLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-658" y="215"/>
+        </scene>
+        <!--Charity List View Controller-->
+        <scene sceneID="waN-2X-px9">
+            <objects>
+                <viewController storyboardIdentifier="CharityListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SoK-h1-qUc" customClass="CharityListViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d0V-x4-Z43" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pmm-H7-mOp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SoK-h1-qUc" id="YWo-SF-DiY"/>
+                                    <outlet property="delegate" destination="SoK-h1-qUc" id="BNb-65-GQj"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pmm-H7-mOp" firstAttribute="leading" secondItem="9zH-Sn-1BE" secondAttribute="leading" id="9LS-hF-lNS"/>
+                            <constraint firstItem="Pmm-H7-mOp" firstAttribute="top" secondItem="9zH-Sn-1BE" secondAttribute="top" id="J4S-FI-nQp"/>
+                            <constraint firstItem="9zH-Sn-1BE" firstAttribute="trailing" secondItem="Pmm-H7-mOp" secondAttribute="trailing" id="hrE-fu-rIC"/>
+                            <constraint firstAttribute="bottom" secondItem="Pmm-H7-mOp" secondAttribute="bottom" id="p9L-b9-bGK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9zH-Sn-1BE"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" id="EaR-eE-UEk">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="KbU-I4-3Y1">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backPreView:" destination="SoK-h1-qUc" id="EmL-Xw-wse"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Pmm-H7-mOp" id="QE5-MN-eCQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YP3-t3-oZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="215"/>
+        </scene>
+        <!--Charity Detail View Controller-->
+        <scene sceneID="wui-1n-IY5">
+            <objects>
+                <viewController storyboardIdentifier="CharityDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MXg-jB-NSe" customClass="CharityDetailViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4dz-8X-lzA" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7H-Dc-6Op">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="MXg-jB-NSe" id="Bot-XT-PCr"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="g7H-Dc-6Op" firstAttribute="top" secondItem="XlQ-Q9-uGR" secondAttribute="top" id="4bm-Ds-fkF"/>
+                            <constraint firstAttribute="bottom" secondItem="g7H-Dc-6Op" secondAttribute="bottom" id="FPT-hQ-2nb"/>
+                            <constraint firstItem="XlQ-Q9-uGR" firstAttribute="trailing" secondItem="g7H-Dc-6Op" secondAttribute="trailing" id="oJy-XT-nZe"/>
+                            <constraint firstItem="g7H-Dc-6Op" firstAttribute="leading" secondItem="XlQ-Q9-uGR" secondAttribute="leading" id="uZA-RB-Whr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XlQ-Q9-uGR"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="webView" destination="g7H-Dc-6Op" id="qli-37-ZgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aRC-iA-hvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="881" y="215"/>
+        </scene>
+    </scenes>
+</document>

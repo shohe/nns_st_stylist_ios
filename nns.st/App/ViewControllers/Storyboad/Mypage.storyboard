@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HoG-ys-NdF">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="ye3-Zd-0mi">
+            <objects>
+                <navigationController id="HoG-ys-NdF" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="hBT-Mp-9x2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="mSv-sO-ueK" kind="relationship" relationship="rootViewController" id="XLV-LT-rP1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HUe-a9-FgP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-722" y="134"/>
+        </scene>
+        <!--My Page View Controller-->
+        <scene sceneID="vbs-fj-SsX">
+            <objects>
+                <viewController id="mSv-sO-ueK" customClass="MyPageViewController" customModule="nns_st" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="806-Uf-Wmr" customClass="BackgroundView" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hrS-67-T5Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mSv-sO-ueK" id="iCw-Zo-2z9"/>
+                                    <outlet property="delegate" destination="mSv-sO-ueK" id="v43-ub-vZg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="hrS-67-T5Z" firstAttribute="leading" secondItem="hxo-9m-Q1s" secondAttribute="leading" id="LuY-zc-t0p"/>
+                            <constraint firstItem="hrS-67-T5Z" firstAttribute="top" secondItem="hxo-9m-Q1s" secondAttribute="top" id="Ssg-8S-ROy"/>
+                            <constraint firstItem="hxo-9m-Q1s" firstAttribute="trailing" secondItem="hrS-67-T5Z" secondAttribute="trailing" id="k6e-zq-r5E"/>
+                            <constraint firstAttribute="bottom" secondItem="hrS-67-T5Z" secondAttribute="bottom" id="oNT-Y0-dU5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hxo-9m-Q1s"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="topColor">
+                                <color key="value" red="0.0" green="0.82745098039999998" blue="0.68627450980000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xX4-af-Dcd" appends="YES" id="pg9-6P-BAm"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="OFK-uV-BVV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="81o-Bk-IiU">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backPreView:" destination="mSv-sO-ueK" id="NGX-Kl-Tym"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="hrS-67-T5Z" id="RSC-C2-m3I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ppy-6h-Vat" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xX4-af-Dcd">
+                    <connections>
+                        <action selector="tapScreen:" destination="mSv-sO-ueK" id="6yd-5L-k1k"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="60" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

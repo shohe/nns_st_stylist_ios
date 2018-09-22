@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SingleButtonCell" rowHeight="90" id="Wn3-PA-kzR" customClass="SingleButtonCell" customModule="nns_st" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wn3-PA-kzR" id="glC-Ff-d4r">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2LE-oj-OAW" customClass="PriceButton" customModule="nns_st" customModuleProvider="target">
+                        <rect key="frame" x="12" y="12" width="296" height="65.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="66" id="C8o-K9-FCp"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="highlightedColor">
+                                <color key="value" red="0.78354843799999996" green="0.78354843799999996" blue="0.78354843799999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="canselOffer:" destination="Wn3-PA-kzR" eventType="touchUpInside" id="PWO-eR-vcm"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="オファーをキャンセル" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfD-jU-myF">
+                        <rect key="frame" x="20" y="37" width="280" height="14"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2LE-oj-OAW" secondAttribute="trailing" constant="12" id="0k6-ln-vKz"/>
+                    <constraint firstItem="tfD-jU-myF" firstAttribute="leading" secondItem="2LE-oj-OAW" secondAttribute="leading" constant="8" id="7Jz-3y-3iW"/>
+                    <constraint firstItem="tfD-jU-myF" firstAttribute="trailing" secondItem="2LE-oj-OAW" secondAttribute="trailing" constant="-8" id="PVA-Hx-E1x"/>
+                    <constraint firstAttribute="bottom" secondItem="2LE-oj-OAW" secondAttribute="bottom" constant="12" id="USI-79-jmR"/>
+                    <constraint firstItem="2LE-oj-OAW" firstAttribute="leading" secondItem="glC-Ff-d4r" secondAttribute="leading" constant="12" id="fti-c8-283"/>
+                    <constraint firstItem="tfD-jU-myF" firstAttribute="centerY" secondItem="2LE-oj-OAW" secondAttribute="centerY" id="mFz-wx-P3e"/>
+                    <constraint firstItem="2LE-oj-OAW" firstAttribute="top" secondItem="glC-Ff-d4r" secondAttribute="top" constant="12" id="ywx-pH-hmg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="ISX-1r-Pul"/>
+            <point key="canvasLocation" x="-420" y="-17"/>
+        </tableViewCell>
+    </objects>
+</document>

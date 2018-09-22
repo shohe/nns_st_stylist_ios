@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NominationCell" customModule="nns_st" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NominationCell" rowHeight="100" id="KGk-i7-Jjw" customClass="NominationCell" customModule="nns_st" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="指名スタイリスト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6a-MY-KP5">
+                        <rect key="frame" x="20" y="12" width="329" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="Vk4-C6-rMA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Vy-af-Y5h">
+                        <rect key="frame" x="198" y="27" width="60" height="60"/>
+                        <color key="backgroundColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="H9y-bd-twl"/>
+                            <constraint firstAttribute="width" secondItem="3Vy-af-Y5h" secondAttribute="height" multiplier="1:1" id="oks-CR-9yd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スタイリスト名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87D-pe-036">
+                        <rect key="frame" x="270" y="49" width="79" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="xiC-CJ-8q9"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="サロン名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tY2-hf-3Q3">
+                        <rect key="frame" x="270" y="68" width="79" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="xeo-Xy-4z1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                        <color key="textColor" red="0.0" green="0.52156862749999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="E6a-MY-KP5" secondAttribute="trailing" constant="20" id="1Um-F4-wyt"/>
+                    <constraint firstItem="87D-pe-036" firstAttribute="leading" secondItem="3Vy-af-Y5h" secondAttribute="trailing" constant="12" id="3wh-MR-cTk"/>
+                    <constraint firstAttribute="bottom" secondItem="3Vy-af-Y5h" secondAttribute="bottom" constant="12" id="Bdp-Do-wnF"/>
+                    <constraint firstItem="tY2-hf-3Q3" firstAttribute="leading" secondItem="3Vy-af-Y5h" secondAttribute="trailing" constant="12" id="Fed-jH-FNo"/>
+                    <constraint firstAttribute="trailing" secondItem="tY2-hf-3Q3" secondAttribute="trailing" constant="20" id="HdL-nV-fF9"/>
+                    <constraint firstItem="E6a-MY-KP5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Nmi-83-86h"/>
+                    <constraint firstAttribute="bottom" secondItem="tY2-hf-3Q3" secondAttribute="bottom" constant="16" id="Obb-ij-HOv"/>
+                    <constraint firstItem="3Vy-af-Y5h" firstAttribute="top" secondItem="E6a-MY-KP5" secondAttribute="bottom" id="QwJ-NH-5S8"/>
+                    <constraint firstItem="E6a-MY-KP5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="S7t-yy-BH3"/>
+                    <constraint firstAttribute="trailing" secondItem="87D-pe-036" secondAttribute="trailing" constant="20" id="Ytw-3f-J1y"/>
+                    <constraint firstItem="tY2-hf-3Q3" firstAttribute="top" secondItem="87D-pe-036" secondAttribute="bottom" constant="4" id="zu2-3n-dbJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="salonName" destination="tY2-hf-3Q3" id="OJq-3z-Zy6"/>
+                <outlet property="stylistImage" destination="3Vy-af-Y5h" id="wkn-Jj-dyD"/>
+                <outlet property="stylistName" destination="87D-pe-036" id="29C-GF-7Ci"/>
+            </connections>
+            <point key="canvasLocation" x="-21.5" y="116"/>
+        </tableViewCell>
+    </objects>
+</document>
