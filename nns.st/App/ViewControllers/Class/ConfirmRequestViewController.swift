@@ -18,17 +18,17 @@ class ConfirmRequestViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var request: OfferRequireMatchedItem!
-    private var requestItem: RequestDetailGetResponse!
+    private var offer: OfferRequireMatchedItem!
+    private var offerItem: OfferGetDetailItem!
     private var loadingView: LoadingView?
     
     var delegate: ConfirmRequestViewControllerDelegate?
     
-    static func instantiateViewController(request: OfferRequireMatchedItem, parent: UIViewController) -> UINavigationController {
+    static func instantiateViewController(offer: OfferRequireMatchedItem, parent: UIViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
         let root = viewController.viewControllers.first as! ConfirmRequestViewController
-        root.request = request
+        root.offer = offer
         root.delegate = parent as? ConfirmRequestViewControllerDelegate
         return viewController
     }
@@ -46,13 +46,14 @@ class ConfirmRequestViewController: UIViewController {
         
         // register cells
         tableView.register(StylistProfileWithStarCell.nib, forCellReuseIdentifier: StylistProfileWithStarCell.identifier)
-        tableView.register(PriceButtonCell.nib, forCellReuseIdentifier: PriceButtonCell.identifier)
-        tableView.register(SalonAddressCell.nib, forCellReuseIdentifier: SalonAddressCell.identifier)
+        tableView.register(DoubleButtonCell.nib, forCellReuseIdentifier: DoubleButtonCell.identifier)
+        tableView.register(OutcomeInfoCell.nib, forCellReuseIdentifier: OutcomeInfoCell.identifier)
+        tableView.register(DateInfoCell.nib, forCellReuseIdentifier: DateInfoCell.identifier)
+        tableView.register(HairTypeInfoCell.nib, forCellReuseIdentifier: HairTypeInfoCell.identifier)
         tableView.register(CommentCell.nib, forCellReuseIdentifier: CommentCell.identifier)
-        tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
         
         // set name
-        self.navigationController?.navigationItem.title = self.request.name
+        self.navigationController?.navigationItem.title = self.offer.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,12 +93,13 @@ extension ConfirmRequestViewController {
     }
     
     private func fetchRequest() {
-//        API.requestDetailGetRequest(id: self.request.requestId) { (result) in
-//            if let res = result {
-//                self.requestItem = res
-//                self.tableView.reloadData()
-//            }
-//        }
+        API.offerGetDetailRequest(id: offer.offerId) { (result) in
+            if let res = result {
+                self.offerItem = res.item
+                self.tableView.reloadData()
+            }
+        }
+        
     }
     
     private func setSnapShotToCell(cell: SalonAddressCell, salonLocation: SalonLocation?) {
@@ -128,10 +130,7 @@ extension ConfirmRequestViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let item = self.requestItem {
-            return item.reviews.count + 4
-        }
-        return 4
+        return 6
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -139,62 +138,46 @@ extension ConfirmRequestViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: StylistProfileWithStarCell.identifier, for: indexPath) as? StylistProfileWithStarCell {
-                if let url = self.request.imageUrl { cell.thumbnailView.loadImage(urlString: url) }
-                if let item = self.requestItem {
-                    /* show blank star => +10 */
-                    cell.starView.setStar(number: Int(item.average) + 10)
-                    cell.statusComment.text = (item.stylist.statusComment != "") ? item.stylist.statusComment : "I AM \(item.stylist.name!)"
+                if let url = self.offer.imageUrl { cell.thumbnailView.loadImage(urlString: url) }
+                if let item = self.offerItem {
+                    cell.setItem(item: item)
                 }
                 return cell
             }
         case 1:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: PriceButtonCell.identifier, for: indexPath) as? PriceButtonCell {
-                cell.selectionStyle = .none
-                cell.delegate = self as PriceButtonCellDelegate
-                if let item = self.requestItem {
-                    cell.setPrice(price: item.request.price, currency: .JPY)
-                }
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DoubleButtonCell.identifier, for: indexPath) as? DoubleButtonCell {
+                cell.delegate = self
+                cell.receiveMode()
                 return cell
             }
+            
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: SalonAddressCell.identifier, for: indexPath) as? SalonAddressCell {
-                
-                if let item = self.requestItem {
-                    self.setSnapShotToCell(cell: cell, salonLocation: item.stylist.salonLocation)
-                    cell.salonName.text = item.stylist.salonName
-                    let address = item.stylist.salonAddress?.split(separator: "/")
-                    if address?.count == 3 {
-                        cell.postCode.text = "〒\(String(address![0]))"
-                        cell.city.text = String(address![1])
-                        cell.street.text = String(address![2])
-                    } else {
-                        cell.postCode.isHidden = true
-                        cell.city.isHidden = true
-                        cell.streetTopConst.constant = -30
-                        cell.street.text = item.stylist.salonAddress
-                    }
+            if let cell = tableView.dequeueReusableCell(withIdentifier: OutcomeInfoCell.identifier, for: indexPath) as? OutcomeInfoCell {
+                if let item = self.offerItem {
+                    cell.setItem(item: item)
                 }
                 
                 return cell
             }
         case 3:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
-                if let item = self.requestItem {
-                    cell.comment.text = item.request.comment
+            if let cell = tableView.dequeueReusableCell(withIdentifier: DateInfoCell.identifier, for: indexPath) as? DateInfoCell {
+                if let item = self.offerItem {
+                    cell.setItem(item: item)
+                }
+                return cell
+            }
+        case 4:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: HairTypeInfoCell.identifier, for: indexPath) as? HairTypeInfoCell {
+                if let item = self.offerItem {
+                    cell.setItem(item: item)
                 }
                 return cell
             }
         
         default:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier, for: indexPath) as? ReviewCell {
-                
-                if indexPath.row != 4 { cell.nonTitle() }
-                if let item = self.requestItem {
-                    cell.userName.text = item.reviews[indexPath.row - 4].name
-                    cell.comment.text = item.reviews[indexPath.row - 4].comment
-                    cell.date.text = item.reviews[indexPath.row - 4].date
-                    /* show blank star => +10 */
-                    cell.starView.setStar(number: item.reviews[indexPath.row - 4].star + 10 )
+            if let cell = tableView.dequeueReusableCell(withIdentifier: CommentCell.identifier, for: indexPath) as? CommentCell {
+                if let item = self.offerItem {
+                    cell.setItem(item: item)
                 }
                 return cell
             }
@@ -206,29 +189,15 @@ extension ConfirmRequestViewController: UITableViewDataSource {
 }
 
 
-// MARK: - PriceButtonCellDelegate
-extension ConfirmRequestViewController: PriceButtonCellDelegate {
+// MARK: - DoubleButtonCellDelegate
+extension ConfirmRequestViewController: DoubleButtonCellDelegate {
     
-    func priceButtonCell(_ didSelectedButton: PriceButton) {
-        self.loadingView = LoadingView(frame: self.view.bounds)
-        self.view.addSubview(self.loadingView!)
+    func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
         
-        UIView.animate(withDuration: 0.3, animations: {
-            self.loadingView!.alpha = 1
-        }) { (complete) in
-//            API.requestTakeRequest(id: self.request.requestId, handler: { (result) in
-//                if let res = result {
-//                    if res.isSuccess {
-//                        self.delegate?.confirmRequestView(res.isSuccess)
-//                        self.dismiss(animated: true, completion: nil)
-//                    } else {
-//                        print("take request: error")
-//                    }
-//                } else {
-//                    print("take request: error")
-//                }
-//            })
-        }
+    }
+    
+    func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
+        
     }
     
 }

@@ -95,7 +95,7 @@ extension MainViewController: UICollectionViewDelegate {
             self.present(MyPageViewController.instantiateViewController(), animated: true, completion: nil)
         } else {
             let item = items[indexPath.row-1] // -1 for mypage
-            self.present(ConfirmRequestViewController.instantiateViewController(request: item, parent: self), animated: true, completion: nil)
+            self.present(ConfirmRequestViewController.instantiateViewController(offer: item, parent: self), animated: true, completion: nil)
         }
     }
     

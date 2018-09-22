@@ -15,6 +15,7 @@ protocol DoubleButtonCellDelegate {
 
 class DoubleButtonCell: UITableViewCell {
     
+    @IBOutlet weak var rightButtonLabel: UILabel!
     
     static var identifier:String {
         get{
@@ -39,6 +40,15 @@ class DoubleButtonCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+// MARK: -
+extension DoubleButtonCell {
+    
+    func receiveMode() {
+        rightButtonLabel.text = "オファーを受ける"
     }
     
 }
