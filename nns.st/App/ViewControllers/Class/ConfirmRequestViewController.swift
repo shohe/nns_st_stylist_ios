@@ -23,13 +23,15 @@ class ConfirmRequestViewController: UIViewController {
     private var loadingView: LoadingView?
     
     var delegate: ConfirmRequestViewControllerDelegate?
+    var _parent: MainViewController?
     
-    static func instantiateViewController(offer: OfferRequireMatchedItem, parent: UIViewController) -> UINavigationController {
+    static func instantiateViewController(offer: OfferRequireMatchedItem, parent: MainViewController) -> UINavigationController {
         let storyboard = UIStoryboard(name: "Confirm", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "CRNavigationController") as! UINavigationController
         let root = viewController.viewControllers.first as! ConfirmRequestViewController
         root.offer = offer
-        root.delegate = parent as? ConfirmRequestViewControllerDelegate
+        root.delegate = parent
+        root._parent = parent
         return viewController
     }
     
@@ -193,11 +195,11 @@ extension ConfirmRequestViewController: UITableViewDataSource {
 extension ConfirmRequestViewController: DoubleButtonCellDelegate {
     
     func doubleButtonCell(_didSelectedOfferButton: DoubleButtonCell) {
-        
+        self.navigationController?.pushViewController(TakeOfferViewController.instantiateViewController(item: self.offerItem, parent: self._parent), animated: true)
     }
     
     func doubleButtonCell(_didSelectedProfileButton: DoubleButtonCell) {
-        
+        present(MyReviewViewController.instantiateViewController(id: self.offerItem.cxId, name: self.offerItem.cxName), animated: true, completion: nil)
     }
     
 }

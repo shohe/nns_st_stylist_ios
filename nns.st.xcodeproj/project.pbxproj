@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0919F119216082EE00A2163C /* ReservationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919F118216082EE00A2163C /* ReservationListViewController.swift */; };
+		0919F11B216083F700A2163C /* Reservation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0919F11A216083F700A2163C /* Reservation.storyboard */; };
 		091BEEE021130017008ED8C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEDF21130017008ED8C5 /* AppDelegate.swift */; };
 		091BEEE221130017008ED8C5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091BEEE121130017008ED8C5 /* ViewController.swift */; };
 		091BEEE521130017008ED8C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091BEEE321130017008ED8C5 /* Main.storyboard */; };
@@ -54,6 +56,7 @@
 		0967AF9E21375FB6002D980F /* MyReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9D21375FB6002D980F /* MyReviewViewController.swift */; };
 		0967AFA121376CF1002D980F /* ReviewAverageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */; };
 		0967AFA221376CF1002D980F /* ReviewAverageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0967AFA021376CF1002D980F /* ReviewAverageCell.xib */; };
+		097A011B21577A31004F4CC5 /* TakeOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097A011A21577A31004F4CC5 /* TakeOfferViewController.swift */; };
 		09A05B5021298DA300C1FF3F /* MapViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B4F21298DA300C1FF3F /* MapViewItem.swift */; };
 		09A05B53212998CB00C1FF3F /* SnapShotMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */; };
 		09A05B552129B78C00C1FF3F /* PopupDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */; };
@@ -188,6 +191,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0919F118216082EE00A2163C /* ReservationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationListViewController.swift; sourceTree = "<group>"; };
+		0919F11A216083F700A2163C /* Reservation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Reservation.storyboard; sourceTree = "<group>"; };
 		091BEEDC21130017008ED8C5 /* nns.st.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nns.st.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		091BEEDF21130017008ED8C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		091BEEE121130017008ED8C5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -241,6 +246,7 @@
 		0967AF9D21375FB6002D980F /* MyReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReviewViewController.swift; sourceTree = "<group>"; };
 		0967AF9F21376CF1002D980F /* ReviewAverageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAverageCell.swift; sourceTree = "<group>"; };
 		0967AFA021376CF1002D980F /* ReviewAverageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewAverageCell.xib; sourceTree = "<group>"; };
+		097A011A21577A31004F4CC5 /* TakeOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TakeOfferViewController.swift; sourceTree = "<group>"; };
 		09A05B4F21298DA300C1FF3F /* MapViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewItem.swift; sourceTree = "<group>"; };
 		09A05B52212998CB00C1FF3F /* SnapShotMaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotMaker.swift; sourceTree = "<group>"; };
 		09A05B542129B78C00C1FF3F /* PopupDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupDatePickerView.swift; sourceTree = "<group>"; };
@@ -578,6 +584,7 @@
 				09DDAAB321219B7F009C6428 /* SignUpPasswordViewController.swift */,
 				09DDAAB52121A45A009C6428 /* SignUpNameViewController.swift */,
 				09DDAAB7212241CB009C6428 /* MainViewController.swift */,
+				0919F118216082EE00A2163C /* ReservationListViewController.swift */,
 				09DDAAC92123FEBF009C6428 /* ConfirmRequestViewController.swift */,
 				09DDAAEB212586AC009C6428 /* MakeOfferViewController.swift */,
 				091F8D11212723340095608F /* MapViewController.swift */,
@@ -591,6 +598,7 @@
 				09FDE351212EC36700A823DA /* CharityDetailViewController.swift */,
 				09FDE355212FB4C900A823DA /* MyPageViewController.swift */,
 				0967AF9D21375FB6002D980F /* MyReviewViewController.swift */,
+				097A011A21577A31004F4CC5 /* TakeOfferViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -607,6 +615,7 @@
 				09BB196D212C571D006562D0 /* History.storyboard */,
 				09FDE349212E87C100A823DA /* Charity.storyboard */,
 				09FDE353212FB49100A823DA /* Mypage.storyboard */,
+				0919F11A216083F700A2163C /* Reservation.storyboard */,
 			);
 			path = Storyboad;
 			sourceTree = "<group>";
@@ -879,6 +888,7 @@
 				09BB197E212DA931006562D0 /* NominationCell.xib in Resources */,
 				09FDE350212E90E400A823DA /* CharityCell.xib in Resources */,
 				09BB197A212D266C006562D0 /* DoubleButtonCell.xib in Resources */,
+				0919F11B216083F700A2163C /* Reservation.storyboard in Resources */,
 				09DDAADA21246BB1009C6428 /* SalonAddressCell.xib in Resources */,
 				09FDE366212FD6DF00A823DA /* MypagePasswordCell.xib in Resources */,
 				09BB195C212AD531006562D0 /* HairTypeInfoCell.xib in Resources */,
@@ -1005,6 +1015,7 @@
 				09A7B73F213928F70084E2C9 /* LoginResponse.swift in Sources */,
 				09A7B757213B8B1D0084E2C9 /* OfferGetDetailResponse.swift in Sources */,
 				091BEEE221130017008ED8C5 /* ViewController.swift in Sources */,
+				0919F119216082EE00A2163C /* ReservationListViewController.swift in Sources */,
 				0952F488213BC6A500B5BCF3 /* RequestTakeResponse.swift in Sources */,
 				0952F4A8213C0D2700B5BCF3 /* ReviewCreateRequest.swift in Sources */,
 				0952F490213BD9A900B5BCF3 /* ReservationGetResponse.swift in Sources */,
@@ -1060,6 +1071,7 @@
 				096432D9214F81B3007A87A8 /* BlankCell.swift in Sources */,
 				09A7B765213BBE1C0084E2C9 /* RequestDetailGetResponse.swift in Sources */,
 				09BB1966212BE96A006562D0 /* LoadingView.swift in Sources */,
+				097A011B21577A31004F4CC5 /* TakeOfferViewController.swift in Sources */,
 				09FDE359212FBD9600A823DA /* MypageThumbnailCell.swift in Sources */,
 				0952F49C213BF89100B5BCF3 /* OfferHistoryListGetResponse.swift in Sources */,
 				0952F4A6213C0CA700B5BCF3 /* ReviewCreateResponse.swift in Sources */,

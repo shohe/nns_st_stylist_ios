@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StylistProfileWithStarCell" customModule="nns_st" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StylistProfileWithStarCell" rowHeight="235" id="KGk-i7-Jjw" customClass="StylistProfileWithStarCell" customModule="nns_st" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="564" height="235"/>
+        <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StylistProfileWithStarCell" rowHeight="257" id="KGk-i7-Jjw" customClass="StylistProfileWithStarCell" customModule="nns_st" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="827" height="257"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="564" height="234.5"/>
@@ -46,7 +45,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="スタイリストのステータスコメント" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a42-Kv-cai">
-                        <rect key="frame" x="52" y="175" width="172" height="41"/>
+                        <rect key="frame" x="196" y="171" width="172" height="41"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -55,7 +54,6 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="a42-Kv-cai" secondAttribute="bottom" constant="24" id="5Uv-0v-8ao"/>
-                    <constraint firstItem="a42-Kv-cai" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="52" id="9eY-uK-YDX"/>
                     <constraint firstItem="a42-Kv-cai" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="F8u-FP-pUS"/>
                     <constraint firstItem="Alx-dx-f7M" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gid-jq-wnG"/>
                     <constraint firstItem="mvK-un-WnQ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="n7E-fG-sif"/>
@@ -71,7 +69,7 @@
                 <outlet property="statusComment" destination="a42-Kv-cai" id="gcd-4x-edQ"/>
                 <outlet property="thumbnailView" destination="mvK-un-WnQ" id="eF5-O5-2Yx"/>
             </connections>
-            <point key="canvasLocation" x="-139" y="76"/>
+            <point key="canvasLocation" x="-139.19999999999999" y="75.562218890554732"/>
         </tableViewCell>
     </objects>
     <resources>

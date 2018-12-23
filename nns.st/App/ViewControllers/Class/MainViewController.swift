@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: GradationViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBInspectable var itemWidth: CGFloat = 0.0
@@ -66,6 +66,12 @@ extension MainViewController {
         }
     }
     
+    private func resetLayout() {
+//        let layout:CarouselFlowLayout = self.collectionView.collectionViewLayout as! CarouselFlowLayout
+//        layout.sideItemScale = 1.0
+//        layout.sideItemAlpha = 1.0
+    }
+    
 }
 
 
@@ -73,7 +79,7 @@ extension MainViewController {
 extension MainViewController {
     
     @IBAction func pressListBtn(_ sender: UIButton) {
-        print("pressListBtn()")
+        self.present(ReservationListViewController.instantiateViewController(), animated: true, completion: nil)
     }
     
     @IBAction func pressHistoryBtn(_ sender: UIButton) {
@@ -143,12 +149,9 @@ extension MainViewController: ConfirmRequestViewControllerDelegate {
     func confirmRequestView(_ didMakeReservation: Bool) {
         NNSCore.setWaitState(didMakeReservation)
         
-        // reset layout
-        let layout:CarouselFlowLayout = self.collectionView.collectionViewLayout as! CarouselFlowLayout
-        layout.sideItemScale = 1.0
-        layout.sideItemAlpha = 1.0
-        
+        items.removeAll()
         self.fetch()
+        self.resetLayout()
     }
     
 }
@@ -159,6 +162,18 @@ extension MainViewController: ConfirmOfferViewControllerDelegate {
     func confirmOfferViewController(_ didCreateOffer: Offer) {
         NNSCore.setMadeOfferId(didCreateOffer.id!)
         NNSCore.setDealUserId(didCreateOffer.stylistId!)
+    }
+    
+}
+
+
+// MARK: - TakeOfferViewControllerDelegate
+extension MainViewController: TakeOfferViewControllerDelegate {
+    
+    func takeOfferView(_ didTakeOffer: Bool, offerId: Int) {
+        items.removeAll()
+        self.fetch()
+        self.resetLayout()
     }
     
 }

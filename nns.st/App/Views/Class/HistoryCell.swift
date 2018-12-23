@@ -53,4 +53,13 @@ extension HistoryCell {
         if let url = item.imageUrl { userImageView.loadImage(urlString: url) }
     }
     
+    func setItem(item: ReservationListGetItem) {
+        let date = item.dateTime.split(separator: " ")[0]
+        dateLabel.text = String(date)
+        nameLabel.text = item.cxName
+        menuLabel.text = item.menu
+        priceLabel.text = PriceLabelMaker.addCarrency(price: item.price, currency: .JPY, isHiddenSymbol: false)
+        if let url = item.imageUrl { userImageView.loadImage(urlString: url) }
+    }
+    
 }

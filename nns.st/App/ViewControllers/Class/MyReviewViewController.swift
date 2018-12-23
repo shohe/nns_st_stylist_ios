@@ -13,11 +13,21 @@ class MyReviewViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var item: OwnReviewGetResponse?
+    private var id: Int?
     
     
     static func instantiateViewController() -> UINavigationController {
         let storyboard = UIStoryboard(name: "Review", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MRNavigationController") as! UINavigationController
+        return viewController
+    }
+    
+    static func instantiateViewController(id: Int, name: String) -> UINavigationController {
+        let storyboard = UIStoryboard(name: "Review", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "MRNavigationController") as! UINavigationController
+        let root = viewController.viewControllers.first as! MyReviewViewController
+        root.id = id
+        root.navigationItem.title = name
         return viewController
     }
 
@@ -33,7 +43,7 @@ class MyReviewViewController: UIViewController {
         tableView.register(ReviewCell.nib, forCellReuseIdentifier: ReviewCell.identifier)
         tableView.register(BlankCell.nib, forCellReuseIdentifier: BlankCell.identifier)
         
-        self.fetch()
+        self.fetch(id: self.id)
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,8 +81,8 @@ extension MyReviewViewController {
         self.tableView.addSubview(view)
     }
     
-    private func fetch() {
-        API.reviewGetRequest(id: nil) { (result) in
+    private func fetch(id: Int?) {
+        API.reviewGetRequest(id: id) { (result) in
             if let res = result {
                 self.item = res
                 self.tableView.reloadData()

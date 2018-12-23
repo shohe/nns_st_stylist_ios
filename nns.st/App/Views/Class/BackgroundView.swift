@@ -25,7 +25,7 @@ class BackgroundView: UIView {
         }
     }
     
-    private func setGradation() {
+    func setGradation() {
         gradientLayer?.removeFromSuperlayer()
         gradientLayer = CAGradientLayer()
         gradientLayer!.colors = [topColor.cgColor, bottomColor.cgColor]
